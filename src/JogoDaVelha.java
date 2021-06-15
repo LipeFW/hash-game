@@ -20,7 +20,7 @@ public class JogoDaVelha {
             System.out.println();
             System.out.println("________________________");
             System.out.println("Deseja jogar novamente? (s/n)");
-            opcao = teclado.nextLine().charAt(0);
+            opcao = teclado.nextLine().toLowerCase().charAt(0);
         } while (opcao == 's');
 
         teclado.close();
