@@ -7,7 +7,7 @@ public class Mapa {
 
     public void limpar() {
         for (int l = 0; l < mapa.length; l++) {
-            for (int c = 0; c <= mapa.length; c++) {
+            for (int c = 0; c < mapa.length; c++) {
                 mapa[l][c] = ' ';
             }
         }
@@ -15,11 +15,11 @@ public class Mapa {
 
     public void desenhar(int jogada) {
         System.out.println("------------- .. jogada: " + jogada);
-        System.out.println("| " + mapa[0][0] + "  | " + mapa[0][1] + " | " + mapa[0][2] + " |");
+        System.out.println("| " + mapa[0][0] + " | " + mapa[0][1] + " | " + mapa[0][2] + " |");
         System.out.println("-------------");
-        System.out.println("| " + mapa[1][0] + "  | " + mapa[1][1] + " | " + mapa[1][2] + " |");
+        System.out.println("| " + mapa[1][0] + " | " + mapa[1][1] + " | " + mapa[1][2] + " |");
         System.out.println("-------------");
-        System.out.println("| " + mapa[2][0] + "  | " + mapa[2][1] + " | " + mapa[2][2] + " |");
+        System.out.println("| " + mapa[2][0] + " | " + mapa[2][1] + " | " + mapa[2][2] + " |");
         System.out.println("----------------------------");
     }
 
