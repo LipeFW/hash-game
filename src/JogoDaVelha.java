@@ -8,20 +8,20 @@ public class JogoDaVelha {
     private JogoDaVelha() {
         Scanner teclado = new Scanner(System.in);
 
-        char opcao;
-
         jogoMapa = new Mapa();
         jogoPC = new PC(jogoMapa);
         jogoJogador = new Jogador(jogoMapa);
 
-        do {
+        char opcao = 's';
+
+        while (opcao == 's') {
             jogar(teclado);
 
             System.out.println();
             System.out.println("________________________");
             System.out.println("Deseja jogar novamente? (s/n)");
             opcao = teclado.next().toLowerCase().charAt(0);
-        } while (opcao == 's');
+        }
 
         teclado.close();
 
@@ -32,34 +32,40 @@ public class JogoDaVelha {
         jogoMapa.limpar();
 
         Boolean alternar = false;
+
         if (jogoMapa.sortear(0, 2) == 0) {
             alternar = true;
         }
 
         int jogada = 0;
-        boolean empate = true;
+        Boolean empate = true;
 
         jogoMapa.desenhar(jogada);
 
         while (jogada < 9) {
+            jogada++;
+
             if (alternar) {
                 if (jogoPC.jogar()) {
                     empate = false;
                     break;
                 }
+
                 alternar = false;
             } else {
                 if (jogoJogador.jogar(teclado)) {
                     empate = false;
                     break;
                 }
+
                 alternar = true;
             }
-            jogada++;
+
             jogoMapa.desenhar(jogada);
         }
 
         jogoMapa.desenhar(jogada);
+
         if (empate) {
             System.out.println(" ... EMPATOU!");
         }

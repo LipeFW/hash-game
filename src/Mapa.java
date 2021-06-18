@@ -33,14 +33,12 @@ public class Mapa {
     }
 
     public boolean verificarGanhador(char jogador) {
-        for (int l = 0; l < mapa.length; l++) {
-            if (mapa[l][0] == jogador && mapa[l][1] == jogador && mapa[l][2] == jogador) {
+        for (int i = 0; i < mapa.length; i++) {
+            if (mapa[i][0] == jogador && mapa[i][1] == jogador && mapa[i][2] == jogador) {
                 return true;
             }
-        }
 
-        for (int c = 0; c < mapa.length; c++) {
-            if (mapa[0][c] == jogador && mapa[1][c] == jogador && mapa[2][c] == jogador) {
+            if (mapa[0][i] == jogador && mapa[1][i] == jogador && mapa[2][i] == jogador) {
                 return true;
             }
         }
