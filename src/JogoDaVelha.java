@@ -32,7 +32,7 @@ public class JogoDaVelha {
         jogoMapa.limpar();
 
         Boolean alternar = false;
-        if (jogoMapa.sortear(0, 1) == 0) {
+        if (jogoMapa.sortear(0, 2) == 0) {
             alternar = true;
         }
 

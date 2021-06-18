@@ -9,17 +9,18 @@ public class PC {
     public boolean jogar() {
         char letra = 'O';
 
-        var linha = this.mapa.sortear(0, 3);
-        var coluna = this.mapa.sortear(0, 3);
+        while (true) {
+            var linha = this.mapa.sortear(0, 3);
+            var coluna = this.mapa.sortear(0, 3);
 
-        if (this.mapa.jogar(linha, coluna, letra)) {
-            System.out.println("PC[" + linha + "," + coluna + "]");
-            if (this.mapa.verificarGanhador(letra)) {
-                System.out.println(" ... PC GANHOU!");
-                return true;
+            if (this.mapa.jogar(linha, coluna, letra)) {
+                System.out.println("PC[" + linha + "," + coluna + "]");
+                if (this.mapa.verificarGanhador(letra)) {
+                    System.out.println(" ... PC GANHOU!");
+                    return true;
+                }
+                return false;
             }
         }
-
-        return false;
     }
 }
