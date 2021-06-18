@@ -22,6 +22,8 @@ public class Jogador {
     		} else {
                 if(this.mapa.jogar(linha, coluna, letra)) {
                     posicaoValida = true;
+                } else {
+                    System.out.println(" posição inválida!");
                 }
             }
         }
