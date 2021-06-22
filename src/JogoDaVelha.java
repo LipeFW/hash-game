@@ -31,10 +31,10 @@ public class JogoDaVelha {
     private void jogar(Scanner teclado) {
         jogoMapa.limpar();
 
-        Boolean alternar = false;
+        Boolean vezComputador = false;
 
         if (jogoMapa.sortear(0, 2) == 0) {
-            alternar = true;
+            vezComputador = true;
         }
 
         int jogada = 0;
@@ -45,20 +45,20 @@ public class JogoDaVelha {
         while (jogada < 9) {
             jogada++;
 
-            if (alternar) {
+            if (vezComputador) {
                 if (jogoPC.jogar()) {
                     empate = false;
                     break;
                 }
 
-                alternar = false;
+                vezComputador = false;
             } else {
                 if (jogoJogador.jogar(teclado)) {
                     empate = false;
                     break;
                 }
 
-                alternar = true;
+                vezComputador = true;
             }
 
             jogoMapa.desenhar(jogada);
