@@ -1,14 +1,13 @@
 public class PC {
 
     private Mapa mapa;
+    private char letra = 'O';
 
     public PC(Mapa mapa) {
         this.mapa = mapa;
     }
 
     public boolean jogar() {
-        char letra = 'O';
-
         while (true) {
             var linha = this.mapa.sortear(0, 3);
             var coluna = this.mapa.sortear(0, 3);
