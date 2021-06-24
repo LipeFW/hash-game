@@ -37,13 +37,13 @@ public class JogoDaVelha {
             vezComputador = true;
         }
 
-        int jogada = 0;
+        int jogadas = 0;
         Boolean empate = true;
 
-        jogoMapa.desenhar(jogada);
+        jogoMapa.desenhar(jogadas);
 
-        while (jogada < 9) {
-            jogada++;
+        while (jogadas < 9) {
+            jogadas++;
 
             if (vezComputador) {
                 if (jogoPC.jogar()) {
@@ -61,10 +61,10 @@ public class JogoDaVelha {
                 vezComputador = true;
             }
 
-            jogoMapa.desenhar(jogada);
+            jogoMapa.desenhar(jogadas);
         }
 
-        jogoMapa.desenhar(jogada);
+        jogoMapa.desenhar(jogadas);
 
         if (empate) {
             System.out.println(" ... EMPATOU!");
